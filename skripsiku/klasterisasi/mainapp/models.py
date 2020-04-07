@@ -37,4 +37,4 @@ class Post(models.Model):
         return self.namaSekolah
 
     def get_absolute_url(self):
-        return reverse('mainapp-home')
+        return reverse('data-sekolah', kwargs={'pk': self.pk})

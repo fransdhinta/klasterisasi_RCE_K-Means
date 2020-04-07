@@ -1,0 +1,52 @@
+{% extends "mainapp/base.html" %}
+{% block content %}
+
+
+<table id="data-sekolah" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th style="text-align: center;">ID</th>
+            <th style="text-align: center;">Nama Sekolah</th>
+            <th style="text-align: center;">NPSN</th>
+            <th style="text-align: center;">BP</th>
+            <th style="text-align: center;">Status</th>
+            <th style="text-align: center;">Last Sync</th>
+            <th style="text-align: center;">Jumlah Sync</th>
+            <th style="text-align: center;">Peserta Didik</th>
+            <th style="text-align: center;">Rombongan Belajar</th>
+            <th style="text-align: center;">Guru</th>
+            <th style="text-align: center;">Pegawai</th>
+            <th style="text-align: center;">Ruang Kelas</th>
+            <th style="text-align: center;">Ruang Lab</th>
+            <th style="text-align: center;">Ruang Perpus</th>
+            <th style="text-align: center;">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in posts %}
+        <tr>
+            <td>{{ post.id }}</td>
+            <td>{{ post.namaSekolah }}</td>
+            <td>{{ post.npsn }}</td>
+            <td>{{ post.bp }}</td>
+            <td>{{ post.status }}</td>
+            <td>{{ post.lastSync }}</td>
+            <td>{{ post.jumlahSync }}</td>
+            <td>{{ post.pd }}</td>
+            <td>{{ post.rombel }}</td>
+            <td>{{ post.guru }}</td>
+            <td>{{ post.pegawai }}</td>
+            <td>{{ post.rKelas }}</td>
+            <td>{{ post.rLab }}</td>
+            <td>{{ post.rPerpus }}</td>
+            <td>
+                <a href="{% url 'post-update' post.id %}" class="btn btn-primary btn-circle"></a>
+                <a href="{% url 'post-delete' post.id %}" class="btn btn-danger btn-circle"></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock content %}

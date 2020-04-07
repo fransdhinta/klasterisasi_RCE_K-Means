@@ -14,6 +14,9 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'mainapp/main.css' %}">
 
+    <!-- Datatable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css" />
+
 
     {% if title %}
     <title>Klasterisasi Sekolah - {{ title }}</title>
@@ -67,19 +70,7 @@
                 {% endif %}
                 {% block content %}{% endblock %}
             </div>
-            <div class="col-md-4">
-                <div class="content-section">
-                    <h3>Active User</h3>
-                    <p class='text-muted'>Information.
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-light">{{ user.username }}</li>
-                            <li class="list-group-item list-group-item-light">{{ user.email }}</li>
-                            <li class="list-group-item list-group-item-light">Calendars</li>
-                            <li class="list-group-item list-group-item-light">etc</li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
+
         </div>
     </main>
     <!-- Optional JavaScript -->
@@ -93,6 +84,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+    <!-- Datatable -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#data-sekolah').DataTable();
+        });
+    </script>
 </body>
 
 </html>
